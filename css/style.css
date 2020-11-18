@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+:root {
+    --roboto: 'Roboto', sans-serif;
+    --roboto-slab: 'Roboto Slab', serif;
+    --blue: #2BAAEC;
+    --green: #25E6C8;
+    --gray: #363636;
+    --soft-gray: #626262;
+    --light-gray: #DEDEDE;
+    --off-white: #F7F7F7;
+}
 
 * {
     box-sizing: border-box;
@@ -8,24 +20,22 @@ html,
 body {
     font-weight: 400;
     font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
     font-size: 16px;
+
     margin: 0;
     padding: 0;
-    line-height: 1.5;
 }
 
-.container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    font-family: var(--roboto-slab);
 }
 
-.border {
-    border: 2px solid gray;
-}
 
+/* ! GENERAL ! */
 .d-flex {
     display: flex;
 }
@@ -34,73 +44,66 @@ body {
     justify-content: space-between;
 }
 
-.navbar-top {
-    display: none;
-    border-bottom: 1px solid rgba(112, 112, 112, 0.6);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.navbar-top .border {
-    opacity: 60%;
-    border-bottom: 1px solid #707070;
-}
-
-.navbar-top .container {
-    padding: 0;
-}
-
-.working-hours {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-}
-
-.working-hours i {
-    margin-right: 0.5rem;
-    color: #2BAAEC;
-}
-
-/* 
-.working-hours p {
-    margin: 0
-}
-*/
-
-.social-icons {
+.horizontal-list {
     display: flex;
     list-style: none;
     margin: 0;
 }
 
-.social-icons li {
-    margin-left: 1rem;
-    font-size: 1em;
+.btn {
+    display: inline-flex;
+    font-weight: 300;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1.25rem, 1.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid transparent;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-.social-icons li a {
-    color: #2BAAEC;
+a {
+    color: var(--blue);
+    text-decoration: none;
 }
 
-.social-icons li a:hover {
-    color: #25E6C8;
+a:hover {
+    color: var(--green);
+}
+
+.blue-text {
+    color: var(--blue);
+}
+
+.hr-green {
+    border: 1px solid var(--green);
+    padding: 0;
+    margin: 0;
 }
 
 
-/* ? MEDIA QUERIES ? */
+
+
+/* ! CONTAINER ! */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    min-width: 600px;
+}
+
 @media (min-width: 768px) {
     .container {
         max-width: 720px;
-    }
-
-    .navbar-top {
-        display: block;
     }
 }
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1140px;
+        max-width: 1120px;
     }
 }
 
@@ -108,4 +111,367 @@ body {
     .container {
         max-width: 1320px;
     }
+}
+
+
+
+
+/* ! TOP BAR ! */
+#top-bar {
+    display: none;
+    border-bottom: 1px solid rgba(112, 112, 112, 0.6);
+    padding-top: 0.5rem;
+    padding-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+    #top-bar {
+        display: block;
+    }
+}
+
+#top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+#top-bar .container .working-hours {
+    flex: 2;
+    color: var(--soft-gray);
+}
+
+#top-bar .container .working-hours i {
+    margin-right: 0.3rem;
+    color: var(--blue);
+    font-size: 1.2em;
+}
+
+/* Socials */
+#top-bar .socials {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#top-bar .socials li {
+    margin-left: 1rem;
+}
+
+
+
+
+/* ! NAVIGATION MENU ! */
+#main-menu {
+    font-family: var(--roboto-slab);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    #main-menu {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+#main-menu .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/** Logo */
+#main-menu .container .logo {
+    height: 50px;
+}
+
+@media (min-width: 768px) {
+    #main-menu .container .logo {
+        height: 60px;
+    }
+}
+
+/** Menu */
+#main-menu .container .menu {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#main-menu .container .menu ul {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    #main-menu .container .menu ul {
+        display: flex;
+    }
+}
+
+#main-menu .container .menu ul li {
+    margin-left: 1.3rem;
+}
+
+#main-menu ul li {
+    margin-left: 1rem;
+}
+
+#main-menu ul li a {
+    color: var(--gray);
+    font-family: var(--roboto-slab);
+}
+
+#main-menu ul li a:hover {
+    color: var(--blue);
+}
+
+#main-menu .container .menu button {
+    font-size: 2rem;
+    padding: 0;
+}
+
+@media (min-width: 768px) {
+    #main-menu .container .menu button {
+        display: none;
+    }
+}
+
+
+
+
+
+/* ! SHOWCASE ! */
+#showcase {}
+
+#showcase .container {
+    background: var(--light-gray);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+#showcase .img-person {
+    max-height: 500px;
+}
+
+#showcase .info-text {
+    max-width: 50%;
+}
+
+#showcase .container .info-text {}
+
+/* Button */
+#about-our-clinic {
+    background-color: var(--green);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0.75rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    font-family: var(--roboto);
+
+    cursor: pointer;
+}
+
+#about-our-clinic:hover {
+    background-color: var(--blue);
+}
+
+.info-text h1 {
+    font-family: var(--roboto-slab);
+    color: var(--gray);
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.info-text p {
+    font-family: var(--roboto);
+    color: var(--soft-gray);
+    font-size: 0.75rem;
+}
+
+
+
+
+/* ! ABOUT US ! */
+#about-us {
+    display: flex;
+}
+
+#about-us .info-text {
+    max-width: 40%;
+}
+
+#about-us .container {
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+#about-us .img-person {
+    max-height: 400px;
+    align-self: flex-end;
+}
+
+#statistics {
+    display: flex;
+    margin-top: 2rem;
+}
+
+#statistics .info-box {
+    margin-right: 3rem;
+}
+
+#statistics .info-box h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#statistics .info-box p {
+    font-family: var(--roboto-slab);
+    margin-top: 0;
+}
+
+
+
+/* ! SERVICES ! */
+#services {
+    background: var(--off-white);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#services-title {
+    font-family: var(--roboto-slab);
+    grid-area: ti;
+}
+
+#services-title h1 {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+#services-title hr {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+#services .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "ti""b1""b2""b3""b4""b5""b6";
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+@media (min-width: 992px) {
+    #services .container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "ti ti ti"
+            "b1 b2 b3"
+            "b4 b5 b6";
+    }
+
+
+    #box-1 {
+        grid-area: "b1";
+    }
+
+    #box-2 {
+        grid-area: "b2";
+    }
+
+    #box-3 {
+        grid-area: "b3";
+    }
+
+    #box-4 {
+        grid-area: "b4";
+    }
+
+    #box-5 {
+        grid-area: "b5";
+    }
+
+    #box-6 {
+        grid-area: "b6";
+    }
+}
+
+.service-box {
+    background: white;
+}
+
+.service-box img {
+    background: red;
+}
+
+
+
+
+
+
+
+/* ! APPOINTMENT SECTION ! */
+#appointment {
+    background-color: rgba(43, 170, 236, 0.8);
+}
+
+#appointment .container {
+    color: #F3FBFF;
+    padding: 32px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#appointment p {
+    font-family: 'Roboto Slab', serif;
+}
+
+#appointment button {
+    color: var(--blue);
+    background: white;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+#appointment button:hover {
+    background: none;
+    color: white;
+    border: 2px solid white;
+}
+
+/* ! FOOTER ! */
+footer {
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--blue);
+    color: #F3FBFF;
+    text-align: center;
+    padding: 32px;
+}
+
+footer span {
+    opacity: 60%;
+    font-size: 0.9rem;
 }
