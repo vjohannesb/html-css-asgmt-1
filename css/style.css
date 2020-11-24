@@ -51,21 +51,19 @@ h3 {
 }
 
 .btn {
-    display: inline-flex;
-    font-weight: 300;
-    font-size: 1rem;
     text-align: center;
     vertical-align: middle;
-    padding: 1.25rem, 1.75rem;
-    border-radius: 0.75rem;
-    border: 1px solid transparent;
+    padding: 1.25rem 1.75rem;
+    border: none;
     background-color: transparent;
     cursor: pointer;
+    transition-duration: 0.15s;
 }
 
 a {
     color: var(--blue);
     text-decoration: none;
+    transition-duration: 0.15s;
 }
 
 a:hover {
@@ -90,14 +88,14 @@ a:hover {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    min-width: 600px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    min-width: 576px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .container {
-        max-width: 720px;
+        max-width: 960px;
     }
 }
 
@@ -185,16 +183,23 @@ a:hover {
 
 /** Logo */
 #main-menu .container .logo {
-    height: 50px;
+    height: 70px;
 }
 
 @media (min-width: 768px) {
     #main-menu .container .logo {
-        height: 60px;
+        height: 80px;
     }
 }
 
 /** Menu */
+
+#nav-btn {
+    display: inline-flex;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
 #main-menu .container .menu {
     flex: 2;
     display: flex;
@@ -249,35 +254,42 @@ a:hover {
 #showcase .container {
     background: var(--light-gray);
     display: flex;
-    justify-content: right;
+    justify-content: space-evenly;
     align-items: center;
     padding-top: 1rem;
 }
 
 #showcase .img-person {
-    max-height: 500px;
+    max-height: 400px;
+    align-self: flex-end;
+    display: none;
 }
 
 #showcase .info-text {
-    max-width: 50%;
+    margin-left: 3rem;
 }
 
-#showcase .container .info-text {}
+@media (min-width: 650px) {
+    #showcase .img-person {
+        display: block;
+    }
+
+    #showcase .info-text {
+        max-width: 33%;
+        margin-left: 3rem;
+    }
+}
 
 /* Button */
 #about-our-clinic {
     background-color: var(--green);
     color: white;
     font-weight: bold;
-    border: none;
     padding: 0.75rem 2rem;
     margin: 0;
-    text-decoration: none;
-    text-align: center;
+    margin-bottom: 1rem;
     border-radius: 10px;
     font-family: var(--roboto);
-
-    cursor: pointer;
 }
 
 #about-our-clinic:hover {
@@ -296,7 +308,7 @@ a:hover {
 .info-text p {
     font-family: var(--roboto);
     color: var(--soft-gray);
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 
 
@@ -307,8 +319,11 @@ a:hover {
     display: flex;
 }
 
-#about-us .info-text {
-    max-width: 40%;
+
+@media (min-width: 768px) {
+    #about-us .info-text {
+        max-width: 40%;
+    }
 }
 
 #about-us .container {
@@ -320,9 +335,24 @@ a:hover {
 }
 
 #about-us .img-person {
-    max-height: 400px;
+    max-height: 500px;
     align-self: flex-end;
+    display: none;
 }
+
+@media (min-width: 650px) {
+    #about-us .img-person {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    #about-us .img-person {
+        max-height: 500px;
+    }
+}
+
+
 
 #statistics {
     display: flex;
@@ -331,11 +361,26 @@ a:hover {
 
 #statistics .info-box {
     margin-right: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
 }
 
 #statistics .info-box h2 {
     margin: 0;
     padding: 0;
+    font-size: 1.5em;
+}
+
+@media (min-width: 650px) {
+    #statistics .info-box h2 {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    #statistics .info-box h2 {
+        font-size: 1.5em;
+    }
 }
 
 #statistics .info-box p {
@@ -368,6 +413,7 @@ a:hover {
 }
 
 #services .container {
+    padding-bottom: 3rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "ti""b1""b2""b3""b4""b5""b6";
@@ -384,7 +430,6 @@ a:hover {
             "b1 b2 b3"
             "b4 b5 b6";
     }
-
 
     #box-1 {
         grid-area: "b1";
@@ -413,10 +458,40 @@ a:hover {
 
 .service-box {
     background: white;
+    padding: 1rem;
 }
 
-.service-box img {
-    background: red;
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 100%;
+    background: var(--green);
+    height: 100px;
+    width: 100px;
+
+    transition: background 0.2s;
+}
+
+
+#box-1 .circle img {
+    padding-left: 9px;
+}
+
+#box-3 .circle img {
+    padding-top: 4px;
+    padding-left: 3px;
+}
+
+#box-5 .circle img {
+    padding-top: 7px;
+}
+
+
+.circle:hover {
+    background: var(--blue);
 }
 
 
@@ -441,9 +516,10 @@ a:hover {
     font-family: 'Roboto Slab', serif;
 }
 
-#appointment button {
+#bookappointment {
     color: var(--blue);
     background: white;
+    font-weight: bold;
     border: none;
     padding: 1rem 2rem;
     margin: 0;
@@ -454,7 +530,7 @@ a:hover {
     border: 2px solid transparent;
 }
 
-#appointment button:hover {
+#bookappointment:hover {
     background: none;
     color: white;
     border: 2px solid white;
