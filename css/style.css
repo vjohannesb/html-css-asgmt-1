@@ -58,6 +58,7 @@ h3 {
     background-color: transparent;
     cursor: pointer;
     transition-duration: 0.15s;
+    outline: none;
 }
 
 a {
@@ -319,6 +320,9 @@ a:hover {
     display: flex;
 }
 
+#about-us .info-text {
+    margin-left: 1rem;
+}
 
 @media (min-width: 768px) {
     #about-us .info-text {
@@ -360,9 +364,8 @@ a:hover {
 }
 
 #statistics .info-box {
-    margin-right: 3rem;
+    margin-right: 2.75rem;
     margin-bottom: 1rem;
-    z-index: 1;
 }
 
 #statistics .info-box h2 {
