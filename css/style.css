@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap');
 
 :root {
     --roboto: 'Roboto', sans-serif;
@@ -91,8 +90,9 @@ a:hover {
     margin-right: auto;
     padding-left: 2rem;
     padding-right: 2rem;
-    min-width: 576px;
+    min-width: 300px;
 }
+
 
 @media (min-width: 992px) {
     .container {
@@ -178,13 +178,19 @@ a:hover {
 
 #main-menu .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 /** Logo */
 #main-menu .container .logo {
-    height: 70px;
+    height: 60px;
+}
+
+@media (min-width: 360px) {
+    #main-menu .container .logo {
+        height: 70px;
+    }
 }
 
 @media (min-width: 768px) {
@@ -221,16 +227,12 @@ a:hover {
     margin-left: 1.3rem;
 }
 
-#main-menu ul li {
-    margin-left: 1rem;
-}
-
-#main-menu ul li a {
+#main-menu .container .menu ul li a {
     color: var(--gray);
     font-family: var(--roboto-slab);
 }
 
-#main-menu ul li a:hover {
+#main-menu .container .menu ul li a:hover {
     color: var(--blue);
 }
 
@@ -268,7 +270,7 @@ a:hover {
     margin-left: 3rem;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 768px) {
     #showcase .img-person {
         display: block;
     }
@@ -319,30 +321,37 @@ a:hover {
 }
 
 #about-us .info-text {
-    margin-left: 1rem;
+    margin-left: 0;
 }
 
 @media (min-width: 768px) {
     #about-us .info-text {
         max-width: 40%;
+        margin-left: 1rem;
     }
 }
 
 #about-us .container {
     background: white;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
 }
 
+@media (min-width: 992px) {
+    #about-us .container {
+        justify-content: space-evenly;
+    }
+}
+
 #about-us .img-person {
-    max-height: 500px;
+    max-height: 550px;
     align-self: flex-end;
     display: none;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 768px) {
     #about-us .img-person {
         display: block;
     }
