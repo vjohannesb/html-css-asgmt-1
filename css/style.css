@@ -24,6 +24,7 @@ body {
 
     margin: 0;
     padding: 0;
+    min-width: 300px;
 }
 
 h1,
@@ -261,13 +262,9 @@ a:hover {
 }
 
 #showcase .img-person {
-    max-height: 400px;
+    max-height: 450px;
     align-self: flex-end;
     display: none;
-}
-
-#showcase .info-text {
-    margin-left: 3rem;
 }
 
 @media (min-width: 768px) {
@@ -334,7 +331,7 @@ a:hover {
 #about-us .container {
     background: white;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding-top: 1rem;
 }
@@ -359,7 +356,7 @@ a:hover {
 
 @media (min-width: 992px) {
     #about-us .img-person {
-        max-height: 500px;
+        max-height: 600px;
     }
 }
 
@@ -368,11 +365,23 @@ a:hover {
 #statistics {
     display: flex;
     margin-top: 2rem;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    #statistics {
+        justify-content: space-between;
+    }
 }
 
 #statistics .info-box {
     margin-right: 2.75rem;
     margin-bottom: 1rem;
+    text-align: center;
+}
+
+#statistics .info-box:last-child {
+    margin-right: 0;
 }
 
 #statistics .info-box h2 {
@@ -381,15 +390,10 @@ a:hover {
     font-size: 1.5em;
 }
 
-@media (min-width: 650px) {
-    #statistics .info-box h2 {
-        font-size: 18px;
-    }
-}
 
 @media (min-width: 768px) {
-    #statistics .info-box h2 {
-        font-size: 1.5em;
+    #statistics .info-box {
+        text-align: start;
     }
 }
 
@@ -432,7 +436,7 @@ a:hover {
     gap: 1rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     #services .container {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas:
@@ -469,6 +473,13 @@ a:hover {
 .service-box {
     background: white;
     padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #ebebeb;
+    transition: box-shadow 0.3s;
+}
+
+.service-box:hover {
+    box-shadow: 4px 4px 6px #DEDEDE;
 }
 
 
