@@ -488,6 +488,10 @@ a:hover {
     box-shadow: 4px 4px 6px #DEDEDE;
 }
 
+.service-box:hover>.circle {
+    background: var(--blue);
+}
+
 
 .circle {
     display: flex;
@@ -515,13 +519,6 @@ a:hover {
 #box-5 .circle img {
     padding-top: 7px;
 }
-
-
-.circle:hover {
-    background: var(--blue);
-}
-
-
 
 
 
