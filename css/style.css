@@ -94,7 +94,6 @@ a:hover {
     min-width: 300px;
 }
 
-
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
@@ -119,7 +118,7 @@ a:hover {
 /* ! TOP BAR ! */
 #top-bar {
     display: none;
-    border-bottom: 1px solid rgba(112, 112, 112, 0.6);
+    border-bottom: 2px solid rgba(112, 112, 112, 0.2);
     padding-top: 0.5rem;
     padding-bottom: 0.25rem;
 }
@@ -150,13 +149,12 @@ a:hover {
 }
 
 /* Socials */
-#top-bar .socials {
+#top-bar .container .socials {
     flex: 1;
-    display: flex;
     justify-content: flex-end;
 }
 
-#top-bar .socials li {
+#top-bar .container .socials li {
     margin-left: 1rem;
 }
 
@@ -200,8 +198,7 @@ a:hover {
     }
 }
 
-/** Menu */
-
+/* Menu */
 #nav-btn {
     display: inline-flex;
     font-weight: 300;
@@ -253,8 +250,15 @@ a:hover {
 
 
 /* ! SHOWCASE ! */
-#showcase .container {
+#showcase {
     background: var(--light-gray);
+}
+
+#showcase h1 {
+    font-size: 2.5rem;
+}
+
+#showcase .container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -273,7 +277,7 @@ a:hover {
     }
 
     #showcase .info-text {
-        max-width: 33%;
+        max-width: 42%;
         margin-left: 3rem;
     }
 }
@@ -294,6 +298,7 @@ a:hover {
     background-color: var(--blue);
 }
 
+/* Info text */
 .info-text h1 {
     font-family: var(--roboto-slab);
     color: var(--gray);
@@ -302,6 +307,7 @@ a:hover {
     margin-bottom: 1rem;
     line-height: 1.1;
 }
+
 
 .info-text p {
     font-family: var(--roboto);
@@ -472,7 +478,7 @@ a:hover {
 
 .service-box {
     background: white;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 3px 3px 5px #ebebeb;
     transition: box-shadow 0.3s;
